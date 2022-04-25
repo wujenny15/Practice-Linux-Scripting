@@ -11,7 +11,7 @@ read -p 'Enter the name of the person who this account is for: ' COMMENT
 # Ask for the password.
 read -p 'Enter the password to use for the account ' PASSWORD
 # Create the user.
-useradd -c "${COMMENT} -m ${USER_NAME}"
+useradd -c "${COMMENT}" -m "${USERNAME}"
 # Set the password for the user
 echo ${PASSWORD} | passwd --stdin ${USER_NAME}
 # Force password change on first login

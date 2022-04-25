@@ -6,4 +6,6 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 
 RUN yum -y install sudo
 RUN yum -y install man-pages man-db man
-CMD ["/bin/bash"]
+RUN yum -y install passwd
+
+CMD ["/bin/bash"] 

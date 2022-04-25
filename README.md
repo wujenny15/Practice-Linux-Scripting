@@ -8,7 +8,10 @@ docker run --rm -it \
     bash
 
 docker image build . -t wujenny15/centos 
-docker run --rm -it wujenny15/centos bash
+docker run --rm -it \
+   -v $(pwd)/section1:/app \
+    wujenny15/centos \
+    bash
 ```
 
 ## Permissions
