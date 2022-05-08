@@ -8,3 +8,4 @@ docker run --rm -it \
     wujenny15/centos \
     bash
 ```
+
