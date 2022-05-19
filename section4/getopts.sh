@@ -68,3 +68,25 @@ echo ${PASSWORD}
 # ./getopts.sh -sv
 # ./getopts.sh -s -v
 # ./getopts.sh -l 8
+
+# ./getopts.sh -sl 8 extra-opts
+echo "NUMBER of args: ${#}"
+echo "All args: ${@}"
+echo "First arg: ${1}"
+echo "Second arg: ${2}"
+echo "Third arg:  ${3}"
+
+# Inspect OPTIOND
+echo "OPTION: ${OPTIND}"
+# Remove the options while leaving the reamining arguments
+shift "$(( OPTIND - 1 ))"
+echo "Afte the shift ${#}"
+echo "All args: ${@}"
+echo "First arg: ${1}"
+echo "Second arg: ${2}"
+echo "Third arg:  ${3}"
+
+if [[ "${#}" -gt 0 ]]
+then 
+    usage
+fi
