@@ -7,5 +7,8 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum -y install sudo
 RUN yum -y install man-pages man-db man
 RUN yum -y install passwd
+RUN yum -y install which
+RUN yum -y install mlocate
+RUN sudo updatedb
 
 CMD ["/bin/bash"] 
