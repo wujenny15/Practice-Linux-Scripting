@@ -122,3 +122,16 @@ tar -zcvf catvideos.tar catvideos/
 sudo tar
 
 ```
+
+# Disable Accounts
+
+```
+sudo chage -E 0 woz
+su - woz
+sudo chage -E -1 woz
+
+sudo passwd -l woz
+sudo password -u woz
+
+sudo usermod -s /sbin/nologin woz
+```
