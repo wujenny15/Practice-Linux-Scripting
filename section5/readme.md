@@ -116,3 +116,11 @@ cat people.csv | cut -d ',' -f2
 cut -d ',' -f2 people.csv
 cut -d '"' -f 2 access_log | cut -d ' ' -f 2 | sort | uniq -c | sort -n | tail -3
 ```
+
+# Parsing logs
+```
+grep Failed syslog-sample | awk -F 'from ' '{print $2}' | cut -d ' ' -f 1
+grep Failed syslog-sample | awk '{print $(NF -3)}' | sort | uniq -c
+grep Failed syslog-sample | awk 'print $(NF -3)' | sort | uniq -c | sort -n
+geoiplookup 182.100.67.59
+```
