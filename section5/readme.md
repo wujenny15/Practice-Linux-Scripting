@@ -76,3 +76,43 @@ netstat -nutl | grep ':' | cut -d ':' -f 2
 netstat -nutl | grep ':' | awk '{print $4}'
 netstat -4nutl | grep ':' | awk '{print $4}' | awk -F ':' '{print $2}'
 ```
+
+# sort
+
+```
+sort /etc/passwd
+sort /etc/passwd | less
+
+# revert the view of the source, use -r
+sort -r /etc/passwd
+
+# sort number
+cut -d ":" -f 3 /etc/passwd | sort -n
+
+# revert sort number
+cut -d ":" -f 3 /etc/passwd | sort -n
+
+sudo du /var | sort -n
+
+# to display human readable disk size
+sudo du -h /var | sort -n
+
+netstat -nutl | grep ':' | awk '{print $4}' | awk -F ':' '{print $NF}' | sort -n | uniq
+cat people.csv | sort | uniq
+
+# understand how many duplicate values
+cat people.csv | sort | uniq -c
+
+wc /etc/passwd
+wc -w /etc/passwd
+
+grep bash /etc/passwd
+
+grep bash /etc/passwd | wc -l
+
+cat /etc/passwd | sort -t ':' -k 3 -n -r
+
+cat people.csv | cut -d ',' -f2
+cut -d ',' -f2 people.csv
+cut -d '"' -f 2 access_log | cut -d ' ' -f 2 | sort | uniq -c | sort -n | tail -3
+```
